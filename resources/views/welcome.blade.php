@@ -27,7 +27,7 @@
 
     <div class="container mb-5 pb-5">
         <h1 class="text-center my-5">Latest Posts</h1>
-        <div class="row">
+        <!-- <div class="row">
             @foreach ($articles as $item)
                 <div class="col col-4 mt-3">
                     <div class="card text-center">
@@ -45,7 +45,7 @@
                     </div>
                 </div>
             @endforeach
-        </div>
+        </div> -->
         {{-- ini pakai react --}}
         <div id="articles" class="row"></div>
     </div>

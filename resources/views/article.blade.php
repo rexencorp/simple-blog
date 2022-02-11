@@ -49,6 +49,9 @@
             </div>
         @endif
 
+        <div id="comment-list" data-artikel-id="{{ $article->id }}">
+
+        </div>
         @auth
         <form method="POST" action="{{ route('comments.create') }}">
             @csrf
@@ -102,15 +105,15 @@
 
                 @guest
                 @if($comment->status == 2)
-                <div class="card mt-4 @if($comment->status == 1) bg-warning @endif">
-                    <div class="card-body">
-                        <h5>{{ $comment->user->name }}</h5>
-                        <p>{{ $comment->comment }}</p>
-                        @auth
-                        <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal" data-bs-target="#addReply-{{ $comment->id }}">Reply</button>
-                        @endauth
+                    <div class="card mt-4 @if($comment->status == 1) bg-warning @endif">
+                        <div class="card-body">
+                            <h5>{{ $comment->user->name }}</h5>
+                            <p>{{ $comment->comment }}</p>
+                            @auth
+                            <button type="button" class="btn btn-primary ml-4" data-bs-toggle="modal" data-bs-target="#addReply-{{ $comment->id }}">Reply</button>
+                            @endauth
+                        </div>
                     </div>
-                </div>
                 @endif
                 @endguest
 
